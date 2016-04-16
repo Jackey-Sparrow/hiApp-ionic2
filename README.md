@@ -1,1 +1,1 @@
-# Ionic 2 Tabs Starter
+# hiApp Ionic 2
