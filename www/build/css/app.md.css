@@ -8964,8 +8964,14 @@ body {
   font-size: 1.4rem;
   background-color: #fff; }
 
+.common-bg {
+  background-color: #ff9500 !important; }
+
 .tweet {
   background-color: #efeff4; }
 
-.login .loginBtn {
-  padding: 0 10px; }
+.hiApp-logo {
+  width: 100px;
+  height: 100px;
+  margin: 50px auto;
+  display: block; }

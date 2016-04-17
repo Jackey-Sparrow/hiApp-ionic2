@@ -1,12 +1,12 @@
-<ion-navbar *navbar>
-    <ion-title>
-        login
-    </ion-title>
-</ion-navbar>
+<!--<ion-navbar *navbar>-->
+    <!--<ion-title>-->
+        <!--login-->
+    <!--</ion-title>-->
+<!--</ion-navbar>-->
 
 <ion-content class="login">
-    <ion-list>
-
+    <img src="images/hiapp_logo@2x.png" class="hiApp-logo">
+    <ion-list padding>
         <ion-item>
             <ion-label floating>Username</ion-label>
             <ion-input type="text"></ion-input>
@@ -17,8 +17,8 @@
             <ion-input type="password"></ion-input>
         </ion-item>
     </ion-list>
-    <div class="loginBtn">
-        <button block (click)="onLogin()">Login</button>
+    <div padding>
+        <button block (click)="onLogin()" class="common-bg">Login</button>
     </div>
 
 </ion-content>
