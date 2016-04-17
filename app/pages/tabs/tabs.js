@@ -2,8 +2,6 @@ import {Page} from 'ionic-angular';
 import {Page1} from '../tweet/tweet';
 import {Page2} from '../page2/page2';
 import {Page3} from '../page3/page3';
-import {Login} from '../login/login';
-
 
 @Page({
   templateUrl: 'build/pages/tabs/tabs.html'

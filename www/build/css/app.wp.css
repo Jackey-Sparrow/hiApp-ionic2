@@ -8826,3 +8826,6 @@ body {
   font-family: "Segoe UI", "Noto Sans", sans-serif;
   font-size: 1.4rem;
   background-color: #fff; }
+
+.tweet {
+  background-color: #efeff4; }

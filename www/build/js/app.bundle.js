@@ -18,6 +18,8 @@ var _ionicNative = require('ionic-native');
 
 var _tabs = require('./pages/tabs/tabs');
 
+var _login = require('./pages/login/login');
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 // http://ionicframework.com/docs/v2/api/config/Config/
@@ -46,7 +48,7 @@ var MyApp = exports.MyApp = (_dec = (0, _ionicAngular.App)({
   return MyApp;
 }()) || _class);
 
-},{"./pages/tabs/tabs":5,"es6-shim":260,"ionic-angular":341,"ionic-native":363}],2:[function(require,module,exports){
+},{"./pages/login/login":2,"./pages/tabs/tabs":5,"es6-shim":260,"ionic-angular":341,"ionic-native":363}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -127,8 +129,6 @@ var _page = require('../page2/page2');
 
 var _page2 = require('../page3/page3');
 
-var _login = require('../login/login');
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var TabsPage = exports.TabsPage = (_dec = (0, _ionicAngular.Page)({
@@ -143,7 +143,7 @@ var TabsPage = exports.TabsPage = (_dec = (0, _ionicAngular.Page)({
   this.tab3Root = _page2.Page3;
 }) || _class);
 
-},{"../login/login":2,"../page2/page2":3,"../page3/page3":4,"../tweet/tweet":6,"ionic-angular":341}],6:[function(require,module,exports){
+},{"../page2/page2":3,"../page3/page3":4,"../tweet/tweet":6,"ionic-angular":341}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
