@@ -2,7 +2,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.MyApp = undefined;
 
@@ -27,30 +27,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 //template: '<ion-nav [root]="rootPage"></ion-nav>',
 var MyApp = exports.MyApp = (_dec = (0, _ionicAngular.App)({
-  template: '<ion-nav [root]="login"></ion-nav>',
-  config: {} }), _dec(_class = function () {
-  _createClass(MyApp, null, [{
-    key: 'parameters',
-    get: function get() {
-      return [[_ionicAngular.Platform]];
+    template: '<ion-nav [root]="login"></ion-nav>',
+    config: {} }), _dec(_class = function () {
+    _createClass(MyApp, null, [{
+        key: 'parameters',
+        get: function get() {
+            return [[_ionicAngular.Platform]];
+        }
+    }]);
+
+    function MyApp(platform) {
+        _classCallCheck(this, MyApp);
+
+        this.rootPage = _tabs.TabsPage;
+
+        this.login = _login.Login;
+
+        //this.nav = nav;
+
+        platform.ready().then(function () {
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            _ionicNative.StatusBar.styleDefault();
+        });
     }
-  }]);
 
-  function MyApp(platform) {
-    _classCallCheck(this, MyApp);
-
-    this.rootPage = _tabs.TabsPage;
-
-    this.login = _login.Login;
-
-    platform.ready().then(function () {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      _ionicNative.StatusBar.styleDefault();
-    });
-  }
-
-  return MyApp;
+    return MyApp;
 }()) || _class);
 
 },{"./pages/login/login":2,"./pages/tabs/tabs":5,"es6-shim":260,"ionic-angular":341,"ionic-native":363}],2:[function(require,module,exports){
@@ -70,28 +72,40 @@ var _dec, _class; /**
 
 var _ionicAngular = require('ionic-angular');
 
+var _tabs = require('../tabs/tabs');
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Login = exports.Login = (_dec = (0, _ionicAngular.Page)({
     templateUrl: 'build/pages/login/login.html'
 }), _dec(_class = function () {
-    function Login() {
+    _createClass(Login, null, [{
+        key: 'parameters',
+        get: function get() {
+            return [[_ionicAngular.NavController]];
+        }
+    }]);
+
+    function Login(nav) {
         _classCallCheck(this, Login);
 
         this.name = 'Login';
+        this.nav = nav;
+        //console.log(this.nav.prototype);
     }
 
     _createClass(Login, [{
         key: 'onLogin',
         value: function onLogin() {
-            console.log('login');
+            console.log(this.nav);
+            this.nav.push(_tabs.TabsPage);
         }
     }]);
 
     return Login;
 }()) || _class);
 
-},{"ionic-angular":341}],3:[function(require,module,exports){
+},{"../tabs/tabs":5,"ionic-angular":341}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

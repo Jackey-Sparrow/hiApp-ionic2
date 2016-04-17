@@ -6,23 +6,25 @@ import {Login} from './pages/login/login';
 
 //template: '<ion-nav [root]="rootPage"></ion-nav>',
 @App({
-  template: '<ion-nav [root]="login"></ion-nav>',
-  config: {} // http://ionicframework.com/docs/v2/api/config/Config/
+    template: '<ion-nav [root]="login"></ion-nav>',
+    config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 export class MyApp {
-  static get parameters() {
-    return [[Platform]];
-  }
+    static get parameters() {
+        return [[Platform]];
+    }
 
-  constructor(platform) {
-    this.rootPage = TabsPage;
+    constructor(platform) {
+        this.rootPage = TabsPage;
 
-    this.login = Login;
+        this.login = Login;
 
-    platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      StatusBar.styleDefault();
-    });
-  }
+        //this.nav = nav;
+
+        platform.ready().then(() => {
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            StatusBar.styleDefault();
+        });
+    }
 }
