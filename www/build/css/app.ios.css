@@ -7800,3 +7800,7 @@ body {
   height: 100px;
   margin: 50px auto;
   display: block; }
+
+.login ion-list {
+  margin-bottom: 0px;
+  padding-bottom: 0px; }
