@@ -55,7 +55,27 @@ var MyApp = exports.MyApp = (_dec = (0, _ionicAngular.App)({
     return MyApp;
 }()) || _class);
 
-},{"./pages/login/login":2,"./pages/tabs/tabs":5,"es6-shim":260,"ionic-angular":341,"ionic-native":363}],2:[function(require,module,exports){
+},{"./pages/login/login":3,"./pages/tabs/tabs":5,"es6-shim":260,"ionic-angular":341,"ionic-native":363}],2:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Contacts = undefined;
+
+var _dec, _class;
+
+var _ionicAngular = require('ionic-angular');
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Contacts = exports.Contacts = (_dec = (0, _ionicAngular.Page)({
+  templateUrl: 'build/pages/contacts/contacts.html'
+}), _dec(_class = function Contacts() {
+  _classCallCheck(this, Contacts);
+}) || _class);
+
+},{"ionic-angular":341}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -103,13 +123,13 @@ var Login = exports.Login = (_dec = (0, _ionicAngular.Page)({
     return Login;
 }()) || _class);
 
-},{"../tabs/tabs":5,"ionic-angular":341}],3:[function(require,module,exports){
+},{"../tabs/tabs":5,"ionic-angular":341}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Page2 = undefined;
+exports.Setting = undefined;
 
 var _dec, _class;
 
@@ -117,30 +137,10 @@ var _ionicAngular = require('ionic-angular');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Page2 = exports.Page2 = (_dec = (0, _ionicAngular.Page)({
-  templateUrl: 'build/pages/page2/page2.html'
-}), _dec(_class = function Page2() {
-  _classCallCheck(this, Page2);
-}) || _class);
-
-},{"ionic-angular":341}],4:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Page3 = undefined;
-
-var _dec, _class;
-
-var _ionicAngular = require('ionic-angular');
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Page3 = exports.Page3 = (_dec = (0, _ionicAngular.Page)({
-  templateUrl: 'build/pages/page3/page3.html'
-}), _dec(_class = function Page3() {
-  _classCallCheck(this, Page3);
+var Setting = exports.Setting = (_dec = (0, _ionicAngular.Page)({
+  templateUrl: 'build/pages/setting/setting.html'
+}), _dec(_class = function Setting() {
+  _classCallCheck(this, Setting);
 }) || _class);
 
 },{"ionic-angular":341}],5:[function(require,module,exports){
@@ -157,9 +157,9 @@ var _ionicAngular = require('ionic-angular');
 
 var _tweet = require('../tweet/tweet');
 
-var _page = require('../page2/page2');
+var _contacts = require('../contacts/contacts');
 
-var _page2 = require('../page3/page3');
+var _setting = require('../setting/setting');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -170,18 +170,18 @@ var TabsPage = exports.TabsPage = (_dec = (0, _ionicAngular.Page)({
 
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  this.tab1Root = _tweet.Page1;
-  this.tab2Root = _page.Page2;
-  this.tab3Root = _page2.Page3;
+  this.tab1Root = _tweet.Tweet;
+  this.tab2Root = _contacts.Contacts;
+  this.tab3Root = _setting.Setting;
 }) || _class);
 
-},{"../page2/page2":3,"../page3/page3":4,"../tweet/tweet":6,"ionic-angular":341}],6:[function(require,module,exports){
+},{"../contacts/contacts":2,"../setting/setting":4,"../tweet/tweet":6,"ionic-angular":341}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Page1 = undefined;
+exports.Tweet = undefined;
 
 var _dec, _class;
 
@@ -189,10 +189,10 @@ var _ionicAngular = require('ionic-angular');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Page1 = exports.Page1 = (_dec = (0, _ionicAngular.Page)({
+var Tweet = exports.Tweet = (_dec = (0, _ionicAngular.Page)({
   templateUrl: 'build/pages/tweet/tweet.html'
-}), _dec(_class = function Page1() {
-  _classCallCheck(this, Page1);
+}), _dec(_class = function Tweet() {
+  _classCallCheck(this, Tweet);
 }) || _class);
 
 },{"ionic-angular":341}],7:[function(require,module,exports){
