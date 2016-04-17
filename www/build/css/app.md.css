@@ -8966,3 +8966,6 @@ body {
 
 .tweet {
   background-color: #efeff4; }
+
+.login .loginBtn {
+  padding: 0 10px; }

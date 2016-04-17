@@ -91,13 +91,11 @@ var Login = exports.Login = (_dec = (0, _ionicAngular.Page)({
 
         this.name = 'Login';
         this.nav = nav;
-        //console.log(this.nav.prototype);
     }
 
     _createClass(Login, [{
         key: 'onLogin',
         value: function onLogin() {
-            console.log(this.nav);
             this.nav.push(_tabs.TabsPage);
         }
     }]);

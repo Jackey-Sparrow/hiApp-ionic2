@@ -1,7 +1,7 @@
 /**
  * Created by Jackey Li on 2016/4/17.
  */
-import {Page,NavController} from 'ionic-angular';
+import {Page, NavController} from 'ionic-angular';
 import {TabsPage} from '../tabs/tabs';
 
 @Page({
@@ -17,11 +17,9 @@ export class Login {
     constructor(nav) {
         this.name = 'Login';
         this.nav = nav;
-        //console.log(this.nav.prototype);
     }
 
     onLogin() {
-        console.log(this.nav);
         this.nav.push(TabsPage);
     }
 }
