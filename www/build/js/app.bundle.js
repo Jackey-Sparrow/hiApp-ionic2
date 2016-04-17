@@ -61,6 +61,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Login = undefined;
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _dec, _class; /**
                    * Created by Jackey Li on 2016/4/17.
                    */
@@ -72,11 +74,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var Login = exports.Login = (_dec = (0, _ionicAngular.Page)({
     templateUrl: 'build/pages/login/login.html'
-}), _dec(_class = function Login() {
-    _classCallCheck(this, Login);
+}), _dec(_class = function () {
+    function Login() {
+        _classCallCheck(this, Login);
 
-    this.name = 'Login';
-}) || _class);
+        this.name = 'Login';
+    }
+
+    _createClass(Login, [{
+        key: 'onLogin',
+        value: function onLogin() {
+            console.log('login');
+        }
+    }]);
+
+    return Login;
+}()) || _class);
 
 },{"ionic-angular":341}],3:[function(require,module,exports){
 'use strict';

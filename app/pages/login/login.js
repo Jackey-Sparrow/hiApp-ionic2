@@ -11,4 +11,8 @@ export class Login {
     constructor() {
         this.name = 'Login';
     }
+
+    onLogin(){
+        console.log('login');
+    }
 }
