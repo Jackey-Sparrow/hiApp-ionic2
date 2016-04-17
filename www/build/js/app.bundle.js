@@ -23,8 +23,11 @@ var _login = require('./pages/login/login');
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 // http://ionicframework.com/docs/v2/api/config/Config/
+
+
+//template: '<ion-nav [root]="rootPage"></ion-nav>',
 var MyApp = exports.MyApp = (_dec = (0, _ionicAngular.App)({
-  template: '<ion-nav [root]="rootPage"></ion-nav>',
+  template: '<ion-nav [root]="login"></ion-nav>',
   config: {} }), _dec(_class = function () {
   _createClass(MyApp, null, [{
     key: 'parameters',
@@ -37,6 +40,8 @@ var MyApp = exports.MyApp = (_dec = (0, _ionicAngular.App)({
     _classCallCheck(this, MyApp);
 
     this.rootPage = _tabs.TabsPage;
+
+    this.login = _login.Login;
 
     platform.ready().then(function () {
       // Okay, so the platform is ready and our plugins are available.
@@ -66,9 +71,11 @@ var _ionicAngular = require('ionic-angular');
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Login = exports.Login = (_dec = (0, _ionicAngular.Page)({
-    template: 'build/login/login.html'
+    templateUrl: 'build/pages/login/login.html'
 }), _dec(_class = function Login() {
     _classCallCheck(this, Login);
+
+    this.name = 'Login';
 }) || _class);
 
 },{"ionic-angular":341}],3:[function(require,module,exports){

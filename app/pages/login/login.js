@@ -4,11 +4,11 @@
 import {Page} from 'ionic-angular';
 
 @Page({
-    template: 'build/login/login.html'
+    templateUrl: 'build/pages/login/login.html'
 })
 
 export class Login {
     constructor() {
-
+        this.name = 'Login';
     }
 }

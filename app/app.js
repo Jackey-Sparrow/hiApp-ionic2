@@ -4,9 +4,9 @@ import {StatusBar} from 'ionic-native';
 import {TabsPage} from './pages/tabs/tabs';
 import {Login} from './pages/login/login';
 
-
+//template: '<ion-nav [root]="rootPage"></ion-nav>',
 @App({
-  template: '<ion-nav [root]="rootPage"></ion-nav>',
+  template: '<ion-nav [root]="login"></ion-nav>',
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 export class MyApp {
@@ -16,6 +16,8 @@ export class MyApp {
 
   constructor(platform) {
     this.rootPage = TabsPage;
+
+    this.login = Login;
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
