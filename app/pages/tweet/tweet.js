@@ -16,6 +16,9 @@ export class Tweet {
         this.loading;
         this.tweets = [];
 
+        this.curPage = 0;
+        this.pageSize = 5;
+
         //todo: not well, may use onPageLoaded
         //setTimeout(()=> {
         //    this.loadTweet();
@@ -36,6 +39,22 @@ export class Tweet {
         this.tweets = [];
         this.loadTweet();
     }
+
+    loadMore(infiniteScroll) {
+        console.log('load more');
+
+        setTimeout(()=> {
+            console.log('load more2');
+            infiniteScroll.complete();
+        }, 2000);
+    }
+
+    //getTweets(curPage,pageSize){
+    //    this.http.get('data/comments.json').subscribe(res => {
+    //        let result = res.json();
+    //        result.
+    //    });
+    //}
 
     presentLoading() {
         this.loading = Loading.create({
