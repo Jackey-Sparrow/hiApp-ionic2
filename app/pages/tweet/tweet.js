@@ -25,7 +25,6 @@ export class Tweet {
     loadTweet() {
         this.presentLoading();
         this.http.get('data/comments.json').subscribe(res => {
-            console.log(res.json());
             setTimeout(()=> {
                 this.closeLoading();
                 this.tweets = res.json();
@@ -34,6 +33,7 @@ export class Tweet {
     }
 
     refresh() {
+        this.tweets = [];
         this.loadTweet();
     }
 
@@ -48,7 +48,7 @@ export class Tweet {
     }
 
     closeLoading() {
-        this.loading.dismiss();
+        this.loading.destroy();
     }
 
     onPageLoaded() {

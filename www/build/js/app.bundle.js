@@ -237,7 +237,6 @@ var Tweet = exports.Tweet = (_dec = (0, _ionicAngular.Page)({
 
             this.presentLoading();
             this.http.get('data/comments.json').subscribe(function (res) {
-                console.log(res.json());
                 setTimeout(function () {
                     _this.closeLoading();
                     _this.tweets = res.json();
@@ -247,7 +246,9 @@ var Tweet = exports.Tweet = (_dec = (0, _ionicAngular.Page)({
     }, {
         key: 'refresh',
         value: function refresh() {
+            this.tweets = [];
             this.loadTweet();
+            //this.loading.enableBack();
         }
     }, {
         key: 'presentLoading',
@@ -263,7 +264,7 @@ var Tweet = exports.Tweet = (_dec = (0, _ionicAngular.Page)({
     }, {
         key: 'closeLoading',
         value: function closeLoading() {
-            this.loading.dismiss();
+            this.loading.destroy();
         }
     }, {
         key: 'onPageLoaded',
