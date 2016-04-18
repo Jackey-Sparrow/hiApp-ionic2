@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "tweetId": 1,
+    "userId": 1,
+    "userName": "Jackey",
+    "comment": "wow that's some serious chat action"
+  },
+  {
+    "id": 2,
+    "tweetId": 1,
+    "userId": 1,
+    "userName": "Cassi",
+    "comment": "Ok, It's fine"
+  },
+  {
+    "id": 3,
+    "tweetId": 1,
+    "userId": 1,
+    "userName": "Jackey",
+    "comment": "We should go out!"
+  },
+  {
+    "id": 4,
+    "tweetId": 1,
+    "userId": 1,
+    "userName": "Jackey",
+    "comment": "Hi, It's me."
+  },
+  {
+    "id": 5,
+    "tweetId": 3,
+    "userId": 1,
+    "userName": "Jackey",
+    "comment": "Wow, beautiful"
+  },
+  {
+    "id": 6,
+    "tweetId": 2,
+    "userId": 1,
+    "userName": "Jackey",
+    "comment": "So?"
+  },
+  {
+    "id": 7,
+    "tweetId": 2,
+    "userId": 1,
+    "userName": "Jackey",
+    "comment": "Be strong!"
+  },
+  {
+    "id": 8,
+    "tweetId": 2,
+    "userId": 1,
+    "userName": "Jackey",
+    "comment": "It's cool."
+  },
+  {
+    "id": 9,
+    "tweetId": 3,
+    "userId": 1,
+    "userName": "Jackey",
+    "comment": "En, see you"
+  }
+]
