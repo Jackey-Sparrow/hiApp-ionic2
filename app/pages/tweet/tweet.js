@@ -1,7 +1,6 @@
 import {Page, Loading, NavController} from 'ionic-angular';
 import {Http} from 'angular2/http';
 
-
 @Page({
     templateUrl: 'build/pages/tweet/tweet.html'
 })
