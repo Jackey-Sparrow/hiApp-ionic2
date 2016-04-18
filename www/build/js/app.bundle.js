@@ -179,23 +179,87 @@ var TabsPage = exports.TabsPage = (_dec = (0, _ionicAngular.Page)({
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.Tweet = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _dec, _class;
 
 var _ionicAngular = require('ionic-angular');
 
+var _http = require('angular2/http');
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Tweet = exports.Tweet = (_dec = (0, _ionicAngular.Page)({
-  templateUrl: 'build/pages/tweet/tweet.html'
-}), _dec(_class = function Tweet() {
-  _classCallCheck(this, Tweet);
-}) || _class);
+    templateUrl: 'build/pages/tweet/tweet.html'
+}), _dec(_class = function () {
+    _createClass(Tweet, null, [{
+        key: 'parameters',
+        get: function get() {
+            return [[_http.Http], [_ionicAngular.NavController]];
+        }
+    }]);
 
-},{"ionic-angular":341}],7:[function(require,module,exports){
+    function Tweet(http, nav) {
+        var _this = this;
+
+        _classCallCheck(this, Tweet);
+
+        this.http = http;
+        this.nav = nav;
+        this.loading;
+        this.tweets = [];
+
+        //todo: not well, may use onPageLoaded
+        setTimeout(function () {
+            _this.loadTweet();
+        }, 500);
+    }
+
+    _createClass(Tweet, [{
+        key: 'loadTweet',
+        value: function loadTweet() {
+            var _this2 = this;
+
+            this.presentLoading();
+            this.http.get('data/comments.json').subscribe(function (res) {
+                console.log(res.json());
+                setTimeout(function () {
+                    _this2.closeLoading();
+                    _this2.tweets = res.json();
+                }, 2000);
+            });
+        }
+    }, {
+        key: 'presentLoading',
+        value: function presentLoading() {
+            this.loading = _ionicAngular.Loading.create({
+                content: 'Loading...',
+                duration: 3000,
+                dismissOnPageChange: true
+            });
+
+            this.nav.present(this.loading);
+        }
+    }, {
+        key: 'closeLoading',
+        value: function closeLoading() {
+            this.loading.dismiss();
+        }
+
+        //onPageLoaded(){
+        //    this.loadTweet();
+        //}
+
+    }]);
+
+    return Tweet;
+}()) || _class);
+
+},{"angular2/http":10,"ionic-angular":341}],7:[function(require,module,exports){
 'use strict';function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }

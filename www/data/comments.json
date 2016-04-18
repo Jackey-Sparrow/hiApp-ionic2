@@ -4,12 +4,14 @@
     "tweetId": 1,
     "userId": 1,
     "userName": "Jackey",
+    "postTime":"2016-04-28",
     "comment": "wow that's some serious chat action"
   },
   {
     "id": 2,
     "tweetId": 1,
     "userId": 1,
+    "postTime":"2016-04-28",
     "userName": "Cassi",
     "comment": "Ok, It's fine"
   },
@@ -18,6 +20,7 @@
     "tweetId": 1,
     "userId": 1,
     "userName": "Jackey",
+    "postTime":"2016-04-28",
     "comment": "We should go out!"
   },
   {
@@ -25,6 +28,7 @@
     "tweetId": 1,
     "userId": 1,
     "userName": "Jackey",
+    "postTime":"2016-04-28",
     "comment": "Hi, It's me."
   },
   {
@@ -32,6 +36,7 @@
     "tweetId": 3,
     "userId": 1,
     "userName": "Jackey",
+    "postTime":"2016-04-28",
     "comment": "Wow, beautiful"
   },
   {
@@ -39,6 +44,7 @@
     "tweetId": 2,
     "userId": 1,
     "userName": "Jackey",
+    "postTime":"2016-04-28",
     "comment": "So?"
   },
   {
@@ -46,6 +52,7 @@
     "tweetId": 2,
     "userId": 1,
     "userName": "Jackey",
+    "postTime":"2016-04-28",
     "comment": "Be strong!"
   },
   {
@@ -53,6 +60,7 @@
     "tweetId": 2,
     "userId": 1,
     "userName": "Jackey",
+    "postTime":"2016-04-28",
     "comment": "It's cool."
   },
   {
@@ -60,6 +68,7 @@
     "tweetId": 3,
     "userId": 1,
     "userName": "Jackey",
+    "postTime":"2016-04-28",
     "comment": "En, see you"
   }
 ]

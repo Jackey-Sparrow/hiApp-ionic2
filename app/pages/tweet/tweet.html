@@ -3,13 +3,14 @@
 </ion-navbar>
 
 <ion-content padding class="tweet" style="background-color: #efeff4;">
-    <ion-card>
+
+    <ion-card *ngFor="#tweet of tweets">
 
         <ion-item>
             <ion-avatar item-left>
                 <img src="images/avatar01.jpg">
             </ion-avatar>
-            <h2>Marty McFly</h2>
+            <h2>{{tweet.userName}}</h2>
 
             <p>November 5, 1955</p>
         </ion-item>
@@ -17,42 +18,7 @@
         <img src="images/cat.jpg">
 
         <ion-card-content>
-            <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a
-                DeLorean?! Whoa. This is heavy.</p>
-        </ion-card-content>
-
-        <ion-item>
-            <button primary clear item-left>
-                <ion-icon name="thumbs-up"></ion-icon>
-                <div>12 Likes</div>
-            </button>
-            <button primary clear item-left>
-                <ion-icon name="text"></ion-icon>
-                <div>4 Comments</div>
-            </button>
-            <ion-note item-right>
-                11h ago
-            </ion-note>
-        </ion-item>
-
-    </ion-card>
-
-    <ion-card>
-
-        <ion-item>
-            <ion-avatar item-left>
-                <img src="images/avatar01.jpg">
-            </ion-avatar>
-            <h2>Marty McFly</h2>
-
-            <p>November 5, 1955</p>
-        </ion-item>
-
-        <img src="images/cat.jpg">
-
-        <ion-card-content>
-            <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a
-                DeLorean?! Whoa. This is heavy.</p>
+            <p>{{tweet.comment}}</p>
         </ion-card-content>
 
         <ion-item>
