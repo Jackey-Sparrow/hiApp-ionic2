@@ -4,15 +4,17 @@
     "tweetId": 1,
     "userId": 1,
     "userName": "Jackey",
-    "postTime":"2016-04-28",
+    "postTime": "2016-04-28",
+    "avatar": "avatar06.jpg",
     "comment": "wow that's some serious chat action"
   },
   {
     "id": 2,
     "tweetId": 1,
     "userId": 1,
-    "postTime":"2016-04-28",
+    "postTime": "2016-04-28",
     "userName": "Cassi",
+    "avatar": "avatar07.jpg",
     "comment": "Ok, It's fine"
   },
   {
@@ -20,7 +22,8 @@
     "tweetId": 1,
     "userId": 1,
     "userName": "Jackey",
-    "postTime":"2016-04-28",
+    "postTime": "2016-04-28",
+    "avatar": "avatar08.jpg",
     "comment": "We should go out!"
   },
   {
@@ -28,7 +31,8 @@
     "tweetId": 1,
     "userId": 1,
     "userName": "Jackey",
-    "postTime":"2016-04-28",
+    "postTime": "2016-04-28",
+    "avatar": "avatar09.jpg",
     "comment": "Hi, It's me."
   },
   {
@@ -36,7 +40,8 @@
     "tweetId": 3,
     "userId": 1,
     "userName": "Jackey",
-    "postTime":"2016-04-28",
+    "postTime": "2016-04-28",
+    "avatar": "avatar01.jpg",
     "comment": "Wow, beautiful"
   },
   {
@@ -44,7 +49,8 @@
     "tweetId": 2,
     "userId": 1,
     "userName": "Jackey",
-    "postTime":"2016-04-28",
+    "postTime": "2016-04-28",
+    "avatar": "avatar02.jpg",
     "comment": "So?"
   },
   {
@@ -52,7 +58,8 @@
     "tweetId": 2,
     "userId": 1,
     "userName": "Jackey",
-    "postTime":"2016-04-28",
+    "postTime": "2016-04-28",
+    "avatar": "avatar03.jpg",
     "comment": "Be strong!"
   },
   {
@@ -60,7 +67,8 @@
     "tweetId": 2,
     "userId": 1,
     "userName": "Jackey",
-    "postTime":"2016-04-28",
+    "postTime": "2016-04-28",
+    "avatar": "avatar04.jpg",
     "comment": "It's cool."
   },
   {
@@ -68,7 +76,8 @@
     "tweetId": 3,
     "userId": 1,
     "userName": "Jackey",
-    "postTime":"2016-04-28",
+    "postTime": "2016-04-28",
+    "avatar": "avatar05.jpg",
     "comment": "En, see you"
   }
 ]
