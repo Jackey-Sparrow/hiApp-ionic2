@@ -1,7 +1,21 @@
+<!--<ion-navbar *navbar>-->
+    <!--<ion-title style="background-color: #ffffff;">Tweet</ion-title>-->
+<!--</ion-navbar>-->
 <ion-navbar *navbar>
-    <ion-title style="background-color: #ffffff;">Tweet</ion-title>
+<ion-toolbar>
+    <ion-buttons start>
+        <button>
+            <ion-icon name="refresh"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title>Tweet</ion-title>
+    <ion-buttons end>
+        <button>
+            <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-buttons>
+</ion-toolbar>
 </ion-navbar>
-
 <ion-content padding class="tweet" style="background-color: #efeff4;">
 
     <ion-card *ngFor="#tweet of tweets">
