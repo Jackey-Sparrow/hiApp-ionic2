@@ -17,9 +17,9 @@ export class Tweet {
         this.tweets = [];
 
         //todo: not well, may use onPageLoaded
-        setTimeout(()=> {
-            this.loadTweet();
-        }, 500);
+        //setTimeout(()=> {
+        //    this.loadTweet();
+        //}, 500);
     }
 
     loadTweet() {
@@ -47,7 +47,9 @@ export class Tweet {
         this.loading.dismiss();
     }
 
-    //onPageLoaded(){
-    //    this.loadTweet();
-    //}
+    onPageLoaded(){
+        setTimeout(()=> {
+            this.loadTweet();
+        }, 500);
+    }
 }

@@ -204,8 +204,6 @@ var Tweet = exports.Tweet = (_dec = (0, _ionicAngular.Page)({
     }]);
 
     function Tweet(http, nav) {
-        var _this = this;
-
         _classCallCheck(this, Tweet);
 
         this.http = http;
@@ -214,22 +212,22 @@ var Tweet = exports.Tweet = (_dec = (0, _ionicAngular.Page)({
         this.tweets = [];
 
         //todo: not well, may use onPageLoaded
-        setTimeout(function () {
-            _this.loadTweet();
-        }, 500);
+        //setTimeout(()=> {
+        //    this.loadTweet();
+        //}, 500);
     }
 
     _createClass(Tweet, [{
         key: 'loadTweet',
         value: function loadTweet() {
-            var _this2 = this;
+            var _this = this;
 
             this.presentLoading();
             this.http.get('data/comments.json').subscribe(function (res) {
                 console.log(res.json());
                 setTimeout(function () {
-                    _this2.closeLoading();
-                    _this2.tweets = res.json();
+                    _this.closeLoading();
+                    _this.tweets = res.json();
                 }, 2000);
             });
         }
@@ -249,11 +247,15 @@ var Tweet = exports.Tweet = (_dec = (0, _ionicAngular.Page)({
         value: function closeLoading() {
             this.loading.dismiss();
         }
+    }, {
+        key: 'onPageLoaded',
+        value: function onPageLoaded() {
+            var _this2 = this;
 
-        //onPageLoaded(){
-        //    this.loadTweet();
-        //}
-
+            setTimeout(function () {
+                _this2.loadTweet();
+            }, 500);
+        }
     }]);
 
     return Tweet;
