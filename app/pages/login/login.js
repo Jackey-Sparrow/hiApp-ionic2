@@ -28,7 +28,7 @@ export class Login {
         });
 
         this.nav.present(loading);
-        
+
         setTimeout(() => {
             loading.dismiss();
             this.nav.push(TabsPage);

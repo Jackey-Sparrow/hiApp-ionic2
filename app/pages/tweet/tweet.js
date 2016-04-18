@@ -33,6 +33,10 @@ export class Tweet {
         });
     }
 
+    refresh() {
+        this.loadTweet();
+    }
+
     presentLoading() {
         this.loading = Loading.create({
             content: 'Loading...',

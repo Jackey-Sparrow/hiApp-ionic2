@@ -245,6 +245,11 @@ var Tweet = exports.Tweet = (_dec = (0, _ionicAngular.Page)({
             });
         }
     }, {
+        key: 'refresh',
+        value: function refresh() {
+            this.loadTweet();
+        }
+    }, {
         key: 'presentLoading',
         value: function presentLoading() {
             this.loading = _ionicAngular.Loading.create({
