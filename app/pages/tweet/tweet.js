@@ -47,7 +47,7 @@ export class Tweet {
         this.loading.dismiss();
     }
 
-    onPageLoaded(){
+    onPageLoaded() {
         setTimeout(()=> {
             this.loadTweet();
         }, 500);

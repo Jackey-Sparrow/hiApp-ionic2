@@ -1,7 +1,7 @@
 /**
  * Created by Jackey Li on 2016/4/17.
  */
-import {Page, NavController} from 'ionic-angular';
+import {Page, NavController, Loading} from 'ionic-angular';
 import {TabsPage} from '../tabs/tabs';
 
 @Page({
@@ -20,6 +20,18 @@ export class Login {
     }
 
     onLogin() {
-        this.nav.push(TabsPage);
+
+        let loading = Loading.create({
+            content: 'Login',
+            duration: 3000,
+            dismissOnPageChange: true
+        });
+
+        this.nav.present(loading);
+        
+        setTimeout(() => {
+            loading.dismiss();
+            this.nav.push(TabsPage);
+        }, 1000);
     }
 }

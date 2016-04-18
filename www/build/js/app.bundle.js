@@ -116,7 +116,20 @@ var Login = exports.Login = (_dec = (0, _ionicAngular.Page)({
     _createClass(Login, [{
         key: 'onLogin',
         value: function onLogin() {
-            this.nav.push(_tabs.TabsPage);
+            var _this = this;
+
+            var loading = _ionicAngular.Loading.create({
+                content: 'Login',
+                duration: 3000,
+                dismissOnPageChange: true
+            });
+
+            this.nav.present(loading);
+
+            setTimeout(function () {
+                loading.dismiss();
+                _this.nav.push(_tabs.TabsPage);
+            }, 1000);
         }
     }]);
 
