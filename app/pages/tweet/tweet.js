@@ -1,78 +1,78 @@
 import {Page, Loading, NavController} from 'ionic-angular';
 import {Http} from 'angular2/http';
+import {TweetService} from './tweet-service';
 
 @Page({
-    templateUrl: 'build/pages/tweet/tweet.html'
+	templateUrl: 'build/pages/tweet/tweet.html'
 })
+
 export class Tweet {
 
-    static get parameters() {
-        return [[Http], [NavController]];
-    }
+	static get parameters() {
+		return [[Http], [NavController]];
+	}
 
-    constructor(http, nav) {
-        this.http = http;
-        this.nav = nav;
-        this.loading;
-        this.tweets = [];
+	constructor(http, nav, dataService) {
+		this.http = http;
+		this.nav = nav;
+		this.loading;
+		this.tweets = [];
+		this.dataService = new TweetService();
+		this.curPage = 1;
+		this.pageSize = 2;
 
-        this.curPage = 0;
-        this.pageSize = 5;
+	}
 
-        //todo: not well, may use onPageLoaded
-        //setTimeout(()=> {
-        //    this.loadTweet();
-        //}, 500);
-    }
+	loadTweet() {
+		this.presentLoading();
 
-    loadTweet() {
-        this.presentLoading();
-        this.http.get('data/comments.json').subscribe(res => {
-            setTimeout(()=> {
-                this.closeLoading();
-                this.tweets = res.json();
-            }, 2000);
-        });
-    }
+		var that = this;
+		this.dataService.loadData(this.curPage, this.pageSize, this.http).then(function (tweets) {
+			setTimeout(()=> {
+				that.closeLoading();
+				that.tweets = tweets;
+			}, 2000);
+		});
+	}
 
-    refresh() {
-        this.tweets = [];
-        this.loadTweet();
-    }
+	refresh() {
+		this.curPage = 1;
+		this.pageSize = 5;
+		this.tweets = [];
+		this.loadTweet();
+	}
 
-    loadMore(infiniteScroll) {
-        console.log('load more');
+	loadMore(infiniteScroll) {
 
-        setTimeout(()=> {
-            console.log('load more2');
-            infiniteScroll.complete();
-        }, 2000);
-    }
+		this.curPage++;
+		let that = this;
+		this.dataService.loadData(this.curPage, this.pageSize, this.http).then(function (tweets) {
+			if (tweets) {
+				that.tweets = that.tweets.concat(tweets);
+			}
+			infiniteScroll.complete();
+		});
 
-    //getTweets(curPage,pageSize){
-    //    this.http.get('data/comments.json').subscribe(res => {
-    //        let result = res.json();
-    //        result.
-    //    });
-    //}
+	}
 
-    presentLoading() {
-        this.loading = Loading.create({
-            content: 'Loading...',
-            duration: 3000,
-            dismissOnPageChange: true
-        });
+	presentLoading() {
+		this.loading = Loading.create({
+			content: 'Loading...',
+			duration: 3000,
+			dismissOnPageChange: true
+		});
 
-        this.nav.present(this.loading);
-    }
+		this.nav.present(this.loading);
+	}
 
-    closeLoading() {
-        this.loading.destroy();
-    }
+	closeLoading() {
+		this.loading.destroy();
+	}
 
-    onPageLoaded() {
-        setTimeout(()=> {
-            this.loadTweet();
-        }, 500);
-    }
+	onPageLoaded() {
+		//todo: refactor
+		setTimeout(()=> {
+			this.loadTweet();
+		}, 500);
+	}
 }
