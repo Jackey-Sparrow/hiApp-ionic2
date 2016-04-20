@@ -3,3 +3,7 @@ node_modules
 .idea
 
 platform
+
+app/.idea
+
+www/.idea
