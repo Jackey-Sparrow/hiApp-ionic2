@@ -94,6 +94,9 @@ export class Login {
 				that.user.languageKey = user.languageKey;
 				that.translate.setLanguage(that.user.languageKey);
 				callback && callback.apply(that, [that.user.languageKey]);
+			}else{
+				that.user.languageKey = 'en';
+				callback && callback.apply(that, [that.user.languageKey]);
 			}
 		});
 
