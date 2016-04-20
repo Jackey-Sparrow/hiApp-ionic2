@@ -7,3 +7,5 @@ platform
 app/.idea
 
 www/.idea
+
+www/build
