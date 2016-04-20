@@ -17,9 +17,10 @@ export class Tweet {
 		this.nav = nav;
 		this.loading;
 		this.tweets = [];
-		this.dataService = new TweetService();
+		this.dataService = new TweetService(this.http);
 		this.curPage = 1;
 		this.pageSize = 2;
+		this.moreTweet = true;
 
 	}
 
@@ -37,9 +38,10 @@ export class Tweet {
 
 	refresh() {
 		this.curPage = 1;
-		this.pageSize = 5;
+		this.pageSize = 2;
 		this.tweets = [];
 		this.loadTweet();
+		this.moreTweet = true;
 	}
 
 	loadMore(infiniteScroll) {
@@ -47,8 +49,11 @@ export class Tweet {
 		this.curPage++;
 		let that = this;
 		this.dataService.loadData(this.curPage, this.pageSize, this.http).then(function (tweets) {
-			if (tweets) {
+
+			if (tweets.length) {
 				that.tweets = that.tweets.concat(tweets);
+			} else {
+				that.moreTweet = false;
 			}
 			infiniteScroll.complete();
 		});
