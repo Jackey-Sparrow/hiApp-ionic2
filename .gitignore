@@ -9,3 +9,14 @@ app/.idea
 www/.idea
 
 www/build
+
+www
+www/build/js/app.bundle.js
+
+www/build/js/app.bundle.js
+
+www/build/js/app.bundle.js.map
+
+www/build/js/app.bundle.js
+
+www/build/pages/tweet/tweet.html

@@ -1,6 +1,12 @@
 # hiApp Ionic 2
 
-## todo
-
+## DONE
 1. translation
-2. [nav](http://ionicframework.com/docs/v2/api/components/nav/NavController/)
+2. http
+
+
+## STATIC CLASS
+
+## ISSUES
+
+1.
