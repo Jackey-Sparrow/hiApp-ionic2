@@ -1,4 +1,4 @@
-import {Page, Loading, NavController} from 'ionic-angular';
+import {Page, Loading, NavController, Translate} from 'ionic-angular';
 import {Http} from 'angular2/http';
 import {TweetService} from './tweet-service';
 
@@ -9,19 +9,28 @@ import {TweetService} from './tweet-service';
 export class Tweet {
 
 	static get parameters() {
-		return [[Http], [NavController]];
+		return [[Http], [NavController], [Translate]];
 	}
 
-	constructor(http, nav, dataService) {
+	constructor(http, nav, translate) {
 		this.http = http;
 		this.nav = nav;
 		this.loading;
-		this.tweets = [];
+		this.dataSource = [];
 		this.dataService = new TweetService(this.http);
 		this.curPage = 1;
 		this.pageSize = 2;
 		this.moreTweet = true;
 
+		this.translate = translate;
+
+		this.loadTranslation();
+	}
+
+	loadTranslation() {
+		this.tweets={
+			title:this.translate.translate('tweetTitle')
+		}
 	}
 
 	loadTweet() {
@@ -31,7 +40,7 @@ export class Tweet {
 		this.dataService.loadData(this.curPage, this.pageSize, this.http).then(function (tweets) {
 			setTimeout(()=> {
 				that.closeLoading();
-				that.tweets = tweets;
+				that.dataSource = tweets;
 			}, 2000);
 		});
 	}
@@ -39,7 +48,7 @@ export class Tweet {
 	refresh() {
 		this.curPage = 1;
 		this.pageSize = 2;
-		this.tweets = [];
+		this.dataSource = [];
 		this.loadTweet();
 		this.moreTweet = true;
 	}
@@ -51,7 +60,7 @@ export class Tweet {
 		this.dataService.loadData(this.curPage, this.pageSize, this.http).then(function (tweets) {
 
 			if (tweets.length) {
-				that.tweets = that.tweets.concat(tweets);
+				that.dataSource = that.dataSource.concat(tweets);
 			} else {
 				that.moreTweet = false;
 			}

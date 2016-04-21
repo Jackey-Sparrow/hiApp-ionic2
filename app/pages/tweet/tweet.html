@@ -1,21 +1,21 @@
 <ion-navbar *navbar>
-<ion-toolbar>
-    <ion-buttons start>
-        <button (click)="refresh()">
-            <ion-icon name="refresh"></ion-icon>
-        </button>
-    </ion-buttons>
-    <ion-title>Tweet</ion-title>
-    <ion-buttons end>
-        <button>
-            <ion-icon name="add"></ion-icon>
-        </button>
-    </ion-buttons>
-</ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons start>
+            <button (click)="refresh()">
+                <ion-icon name="refresh"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>{{tweets.title}}</ion-title>
+        <ion-buttons end>
+            <button>
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-navbar>
 <ion-content padding class="tweet" style="background-color: #efeff4;">
 
-    <ion-card *ngFor="#tweet of tweets">
+    <ion-card *ngFor="#tweet of dataSource">
 
         <ion-item>
             <ion-avatar item-left>

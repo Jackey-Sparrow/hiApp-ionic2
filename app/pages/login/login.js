@@ -1,13 +1,13 @@
 /**
  * Created by Jackey Li on 2016/4/17.
  */
-import {Page, NavController, Loading, TranslatePipe, Translate} from 'ionic-angular';
+import {Page, NavController, Loading, Translate} from 'ionic-angular';
 import {TabsPage} from '../tabs/tabs';
-import {UserLocalStorage} from './userLocalStorage';
+import {UserLocalStorage} from './user-local-storage';
+import {languagesService} from './../common/services/language-service';
 
 @Page({
-	templateUrl: 'build/pages/login/login.html',
-	pipes: [TranslatePipe]
+	templateUrl: 'build/pages/login/login.html'
 })
 
 export class Login {
@@ -17,6 +17,7 @@ export class Login {
 	}
 
 	constructor(nav, translate) {
+
 		this.name = 'Login';
 		this.nav = nav;
 		this.localStorage = new UserLocalStorage();
@@ -39,14 +40,12 @@ export class Login {
 			}
 		];
 
-		this.restoreUserLocalStorage(function (lang) {
-			this.loadTranslation(lang);
-		});
+		this.restoreUserLocalStorage();
 
 	}
 
 	changeLanguage(languageKey) {
-		console.log(languageKey);
+		this.translate.setLanguage(languageKey);
 		this.loadTranslation(languageKey);
 	}
 
@@ -84,7 +83,7 @@ export class Login {
 		this.localStorage.setUser(this.user);
 	}
 
-	restoreUserLocalStorage(callback) {
+	restoreUserLocalStorage() {
 		var that = this;
 		this.localStorage.getUser().then(function (user) {
 			if (user) {
@@ -92,13 +91,11 @@ export class Login {
 				that.user.userName = user.userName;
 				that.user.password = user.password;
 				that.user.languageKey = user.languageKey;
-				that.translate.setLanguage(that.user.languageKey);
-				callback && callback.apply(that, [that.user.languageKey]);
-			}else{
-				that.user.languageKey = 'en';
-				callback && callback.apply(that, [that.user.languageKey]);
+				that.changeLanguage(that.user.languageKey);
+			} else {
+				that.user.languageKey = languagesService.defaultKey;
+				that.changeLanguage(that.user.languageKey);
 			}
 		});
-
 	}
 }
