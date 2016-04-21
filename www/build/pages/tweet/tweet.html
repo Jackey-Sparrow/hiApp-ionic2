@@ -1,45 +1,45 @@
 <ion-navbar *navbar>
-<ion-toolbar>
-    <ion-buttons start>
-        <button (click)="refresh()">
-            <ion-icon name="refresh"></ion-icon>
-        </button>
-    </ion-buttons>
-    <ion-title>Tweet</ion-title>
-    <ion-buttons end>
-        <button>
-            <ion-icon name="add"></ion-icon>
-        </button>
-    </ion-buttons>
-</ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons start>
+            <button (click)="refresh()">
+                <ion-icon name="refresh"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>{{tweets.title}}</ion-title>
+        <ion-buttons end>
+            <button>
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-navbar>
 <ion-content padding class="tweet" style="background-color: #efeff4;">
 
-    <ion-card *ngFor="#tweet of tweets">
+    <ion-card *ngFor="#tweet of dataSource">
 
-        <ion-item>
+        <ion-item class="tweet-title">
             <ion-avatar item-left>
-                <img src="images/{{tweet.avatar}}">
+                <img src="{{tweet.icon}}">
             </ion-avatar>
-            <h2>{{tweet.userName}}</h2>
+            <h2>{{tweet.name}}</h2>
 
-            <p>{{tweet.postTime}}</p>
+            <p>{{tweet.insertDate}}</p>
         </ion-item>
 
-        <img src="images/cat.jpg">
-
-        <ion-card-content>
-            <p>{{tweet.comment}}</p>
+        <ion-card-content (click)="openTweetDetail(tweet)">
+            <p>{{tweet.content}}</p>
         </ion-card-content>
+
+        <img *ngFor="#pic of tweet.photos" class="half-image" src="{{pic}}">
 
         <ion-item>
             <button primary clear item-left>
                 <ion-icon name="thumbs-up"></ion-icon>
-                <div>12 Likes</div>
+                <div>{{tweet.likes}} Likes</div>
             </button>
             <button primary clear item-left>
                 <ion-icon name="text"></ion-icon>
-                <div>4 Comments</div>
+                <div>{{tweet.comments}} Comments</div>
             </button>
         </ion-item>
 

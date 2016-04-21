@@ -3,7 +3,7 @@
  */
 import {Page, NavController, Loading, Translate} from 'ionic-angular';
 import {TabsPage} from '../tabs/tabs';
-import {UserLocalStorage} from './user-local-storage';
+import {UserLocalStorage} from './../common/services/user-local-storage';
 import {languagesService} from './../common/services/language-service';
 
 @Page({
@@ -29,16 +29,7 @@ export class Login {
 
 		this.translate = translate;
 
-		this.languages = [
-			{
-				id: 'en',
-				name: 'English'
-			},
-			{
-				id: 'cn',
-				name: '中文'
-			}
-		];
+		this.languages = languagesService.languagesUI;
 
 		this.restoreUserLocalStorage();
 

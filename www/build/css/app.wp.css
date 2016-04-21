@@ -8833,6 +8833,17 @@ body {
 .tweet {
   background-color: #efeff4; }
 
+.tweet .tweet-title {
+  border-bottom: 1px solid #dddddd; }
+
+.tweet ion-card ion-card-content {
+  padding-top: 5px; }
+
+.tweet .half-image {
+  width: 50%;
+  height: 50%;
+  padding: 0px 16px; }
+
 .hiApp-logo {
   width: 100px;
   height: 100px;
@@ -8842,3 +8853,15 @@ body {
 .login ion-list {
   margin-bottom: 0px;
   padding-bottom: 0px; }
+
+.setting .feedback {
+  color: #38b57f; }
+
+.setting .update {
+  color: #fca405; }
+
+.setting .language {
+  color: #9b59b6; }
+
+.setting .about {
+  color: #5999f3; }

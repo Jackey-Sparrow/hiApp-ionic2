@@ -1,23 +1,24 @@
 <ion-content class="login">
     <img src="images/hiapp_logo@2x.png" class="hiApp-logo">
     <ion-list padding>
-        <ion-item>
-            <ion-label floating>{{login.userName}}</ion-label>
-            <ion-input type="text" [(ngModel)]="user.userName"></ion-input>
-        </ion-item>
 
         <ion-item>
-            <ion-label floating>{{login.password}}</ion-label>
-            <ion-input type="password" [(ngModel)]="user.password"></ion-input>
-        </ion-item>
-
-        <ion-item>
-            <ion-label floating>{{login.language}}</ion-label>
+            <ion-label>{{login.language}}</ion-label>
             <ion-select [(ngModel)]="user.languageKey" (ngModelChange)="changeLanguage(user.languageKey)">
                 <ion-option *ngFor="#language of languages" value="{{language.id}}">
                     {{language.name}}
                 </ion-option>
             </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>{{login.userName}}</ion-label>
+            <ion-input type="text" [(ngModel)]="user.userName"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>{{login.password}}</ion-label>
+            <ion-input type="password" [(ngModel)]="user.password"></ion-input>
         </ion-item>
 
     </ion-list>

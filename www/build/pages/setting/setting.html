@@ -1,10 +1,42 @@
-
 <ion-navbar *navbar>
-  <ion-title>
-    Tab 3
-  </ion-title>
+    <ion-title>
+        {{setting.title}}
+    </ion-title>
 </ion-navbar>
 
-<ion-content class="page3">
+<ion-content class="setting">
 
+    <ion-list>
+
+        <ion-item>
+            <ion-avatar item-left>
+                <img src="images/avatar01.jpg"/>
+            </ion-avatar>
+            <h2>Hi</h2>
+
+            <p>I'm Jackey</p>
+        </ion-item>
+
+        <ion-list-header></ion-list-header>
+        <ion-item>
+            <ion-icon name="mail" item-left class="feedback"></ion-icon>
+            {{setting.feedback}}
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name="sync" item-left class="update"></ion-icon>
+            {{setting.update}}
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name="globe" item-left class="language"></ion-icon>
+            {{setting.language}}
+            <ion-note item-right>{{setting.switchLanguage}}</ion-note>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name="alert" item-left class="about"></ion-icon>
+            {{setting.about}}
+        </ion-item>
+    </ion-list>
 </ion-content>
