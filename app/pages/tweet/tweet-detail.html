@@ -2,20 +2,20 @@
     <ion-toolbar>
         <ion-buttons start>
             <button (click)="refresh()">
-                <ion-icon name="refresh"></ion-icon>
+                <ion-icon name="back"></ion-icon>
             </button>
         </ion-buttons>
-        <ion-title>{{tweets.title}}</ion-title>
-        <ion-buttons end>
-            <button>
-                <ion-icon name="add"></ion-icon>
-            </button>
-        </ion-buttons>
+        <!--<ion-title>{{tweet.title}}</ion-title>-->
+        <!--<ion-buttons end>-->
+        <!--<button>-->
+        <!--<ion-icon name="add"></ion-icon>-->
+        <!--</button>-->
+        <!--</ion-buttons>-->
     </ion-toolbar>
 </ion-navbar>
 <ion-content padding class="tweet" style="background-color: #efeff4;">
 
-    <ion-card *ngFor="#tweet of dataSource">
+    <ion-card>
 
         <ion-item class="tweet-title">
             <ion-avatar item-left>
@@ -26,12 +26,11 @@
             <p>{{tweet.insertDate}}</p>
         </ion-item>
 
-        <ion-card-content (click)="openTweetDetail(tweet)">
+        <ion-card-content>
             <p>{{tweet.content}}</p>
         </ion-card-content>
 
         <img *ngFor="#pic of tweet.photos" class="half-image" src="{{pic}}">
-
         <ion-item>
             <button primary clear item-left>
                 <ion-icon name="thumbs-up"></ion-icon>
@@ -45,7 +44,4 @@
 
     </ion-card>
 
-    <ion-infinite-scroll *ngIf="moreTweet" (infinite)="loadMore($event)" threshold="5%" distance="50%">
-        <ion-infinite-scroll-content loadingText="Loading More Tweet"></ion-infinite-scroll-content>
-    </ion-infinite-scroll>
 </ion-content>

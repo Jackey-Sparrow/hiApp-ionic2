@@ -1,21 +1,33 @@
-.common-bg{
+.common-bg {
   background-color: #ff9500 !important;
 }
-
-
 
 .tweet {
   background-color: #efeff4;
 }
 
-.hiApp-logo{
+.tweet .tweet-title {
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.tweet ion-card ion-card-content{
+  padding-top: 5px;
+}
+
+.tweet .half-image {
+  width: 50%;
+  height: 50%;
+  padding: 0px 16px;
+}
+
+.hiApp-logo {
   width: 100px;
   height: 100px;
   margin: 50px auto;
   display: block;
 }
 
-.login ion-list{
+.login ion-list {
   margin-bottom: 0px;
   padding-bottom: 0px;
 }

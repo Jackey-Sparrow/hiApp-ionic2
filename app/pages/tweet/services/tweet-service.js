@@ -18,7 +18,7 @@ export class TweetService {
 	loadData(curPage, pageSize, http) {
 		let that = this;
 		var promise = new Promise(function (resolve, reject) {
-			that.http.get('data/comments.json').subscribe(res => {
+			that.http.get('data/tweet.json').subscribe(res => {
 				let result = res.json();
 				result = result.slice(pageSize * (curPage - 1), pageSize * curPage);
 				resolve(result);

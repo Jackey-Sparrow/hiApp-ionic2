@@ -1,6 +1,7 @@
 import {Page, Loading, NavController, Translate} from 'ionic-angular';
 import {Http} from 'angular2/http';
-import {TweetService} from './tweet-service';
+import {TweetService} from './services/tweet-service';
+import {TweetDetail} from './tweet-detail';
 
 @Page({
 	templateUrl: 'build/pages/tweet/tweet.html'
@@ -28,8 +29,8 @@ export class Tweet {
 	}
 
 	loadTranslation() {
-		this.tweets={
-			title:this.translate.translate('tweetTitle')
+		this.tweets = {
+			title: this.translate.translate('tweetTitle')
 		}
 	}
 
@@ -66,7 +67,6 @@ export class Tweet {
 			}
 			infiniteScroll.complete();
 		});
-
 	}
 
 	presentLoading() {
@@ -81,6 +81,10 @@ export class Tweet {
 
 	closeLoading() {
 		this.loading.destroy();
+	}
+
+	openTweetDetail(item) {
+		this.nav.push(TweetDetail, {tweet: item});
 	}
 
 	onPageLoaded() {
