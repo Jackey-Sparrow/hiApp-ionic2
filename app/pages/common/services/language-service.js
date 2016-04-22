@@ -53,15 +53,15 @@ var languagesUI = [
 
 var languagesService = {
 	defaultKey: 'en',
-	languages: languages,
+	//languages: languages,
 	languagesUI: languagesUI,
 	init: init,
 	getLanguageUIByKey: getLanguageUIByKey
 };
 
 function init(translate) {
-	translate.translations('cn', languagesService.languages.cn);
-	translate.translations('en', languagesService.languages.en);
+	translate.translations('cn', languages.cn);
+	translate.translations('en', languages.en);
 }
 
 function getLanguageUIByKey(lang) {
