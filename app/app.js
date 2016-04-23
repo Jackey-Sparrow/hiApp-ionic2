@@ -4,10 +4,9 @@ import {StatusBar} from 'ionic-native';
 import {Login} from './pages/login/login';
 import {languagesService} from './pages/common/services/language-service';
 
-//template: '<ion-nav [root]="rootPage"></ion-nav>',
 @App({
 	template: '<ion-nav [root]="login"></ion-nav>',
-	config: {} // http://ionicframework.com/docs/v2/api/config/Config/
+	config: {}
 })
 export class MyApp {
 	static get parameters() {
