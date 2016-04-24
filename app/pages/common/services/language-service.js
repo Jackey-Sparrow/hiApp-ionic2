@@ -14,6 +14,8 @@ var languages = {
 
 		'tweetTitle': '推特',
 
+		'contactTitle':'通讯录',
+
 		'settingTitle': '设置',
 		'feedback': '意见反馈',
 		'update': '检测更新',
@@ -31,6 +33,7 @@ var languages = {
 		'login': 'Login',
 
 		'tweetTitle': 'Tweet',
+		'contactTitle':'Contacts',
 
 		'settingTitle': 'Setting',
 		'feedback': 'Feekback',

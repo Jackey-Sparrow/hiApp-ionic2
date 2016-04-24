@@ -12,5 +12,7 @@ export class Contacts {
 
     constructor(translate) {
         this.translate = translate;
+
+        this.title = this.translate.translate('contactTitle');
     }
 }
