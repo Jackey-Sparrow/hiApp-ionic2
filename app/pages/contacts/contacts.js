@@ -1,10 +1,16 @@
-import {Page} from 'ionic-angular';
+import {Page, Translate} from 'ionic-angular';
 
 @Page({
-  templateUrl: 'build/pages/contacts/contacts.html'
+    templateUrl: 'build/pages/contacts/contacts.html'
 })
-export class Contacts {
-  constructor() {
 
-  }
+export class Contacts {
+
+    static get parameters() {
+        return [[Translate]];
+    }
+
+    constructor(translate) {
+        this.translate = translate;
+    }
 }
