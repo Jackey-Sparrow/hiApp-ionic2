@@ -1,14 +1,12 @@
 node_modules
 
+www
+
 .idea
 
 platforms
 
 app/.idea
 
-www/.idea
-
-www/build
-
-www
+www/
 
