@@ -14,7 +14,7 @@ export class ContactService {
         this.http = http;
     }
 
-    loadData(http) {
+    loadData() {
         let that = this;
         var promise = new Promise(function (resolve, reject) {
             that.http.get('data/contacts.json').subscribe(res => {

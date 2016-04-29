@@ -19,5 +19,17 @@ export class Contacts {
         this.title = this.translate.translate('contactTitle');
 
         this.dataService = new ContactService(this.http);
+
+        this.contacts = [];
+
+        this.loadData();
     }
+
+    loadData(){
+        let that = this;
+        this.dataService.loadData().then(function(data){
+            that.contacts = data;
+        });
+    }
+
 }

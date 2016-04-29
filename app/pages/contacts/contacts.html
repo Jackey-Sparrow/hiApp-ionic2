@@ -1,11 +1,19 @@
-
 <ion-navbar *navbar>
-  <ion-title>
-    {{title}}
-  </ion-title>
+    <ion-title>
+        {{title}}
+    </ion-title>
 </ion-navbar>
 
 <ion-content class="contacts">
+    <ion-list>
+        <ion-item *ngFor="#contact of contacts">
+            <ion-avatar item-left>
+                <img src="{{contact.face}}">
+            </ion-avatar>
+            <h2>{{contact.name}}</h2>
 
+            <p>{{contact.telephone}}</p>
+        </ion-item>
+    </ion-list>
 
 </ion-content>
