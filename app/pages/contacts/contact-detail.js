@@ -5,7 +5,7 @@ import {Page, Loading, Translate, NavParams} from 'ionic-angular';
 import {Http} from 'angular2/http';
 
 @Page({
-	templateUrl: 'build/pages/tweet/contact-detail.html'
+	templateUrl: 'build/pages/contacts/contact-detail.html'
 })
 
 export class ContactDetail {
@@ -18,6 +18,6 @@ export class ContactDetail {
 		this.http = http;
 		this.navParams = navParams;
 		this.translate = translate;
-		this.tweet = this.navParams.data.tweet;
+		this.contact = this.navParams.data.contact;
 	}
 }

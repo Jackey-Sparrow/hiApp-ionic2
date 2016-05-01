@@ -6,7 +6,7 @@
 
 <ion-content class="contacts">
     <ion-list>
-        <ion-item *ngFor="#contact of contacts">
+        <ion-item *ngFor="#contact of contacts" (click)="openContactDetail(contact)">
             <ion-avatar item-left>
                 <img src="{{contact.face}}">
             </ion-avatar>

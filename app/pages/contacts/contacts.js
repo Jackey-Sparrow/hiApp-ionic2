@@ -1,6 +1,7 @@
-import {Page, Translate} from 'ionic-angular';
+import {Page, Translate, NavController} from 'ionic-angular';
 import {ContactService} from './services/contact-service.js';
 import {Http} from 'angular2/http';
+import {ContactDetail} from './contact-detail';
 
 @Page({
     templateUrl: 'build/pages/contacts/contacts.html'
@@ -9,14 +10,16 @@ import {Http} from 'angular2/http';
 export class Contacts {
 
     static get parameters() {
-        return [[Translate], [Http]];
+        return [[Translate], [Http], [NavController]];
     }
 
-    constructor(translate, http) {
+    constructor(translate, http, nav) {
         this.translate = translate;
         this.http = http;
 
         this.title = this.translate.translate('contactTitle');
+
+        this.nav = nav;
 
         this.dataService = new ContactService(this.http);
 
@@ -25,11 +28,15 @@ export class Contacts {
         this.loadData();
     }
 
-    loadData(){
+    loadData() {
         let that = this;
-        this.dataService.loadData().then(function(data){
+        this.dataService.loadData().then(function (data) {
             that.contacts = data;
         });
+    }
+
+    openContactDetail(item) {
+        this.nav.push(ContactDetail, {contact: item});
     }
 
 }
