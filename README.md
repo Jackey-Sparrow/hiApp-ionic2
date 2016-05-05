@@ -14,4 +14,4 @@
 
 ## screenshot
 
-![1](https://raw.githubusercontent.com/Jackey-Sparrow/hiApp-ionic2/master/screenshot/IMG_1964.PNG)
+<img src="https://raw.githubusercontent.com/Jackey-Sparrow/hiApp-ionic2/master/screenshot/IMG_1964.PNG" width="320" height="568"/>
