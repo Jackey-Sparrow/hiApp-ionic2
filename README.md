@@ -7,17 +7,14 @@
 
 ## STATIC CLASS
 
-## ISSUES
-
-1.
-
-
 ## screenshot
 
 <img src="https://raw.githubusercontent.com/Jackey-Sparrow/hiApp-ionic2/master/screenshot/IMG_1964.PNG" width="320" height="568"/>
 <img src="https://raw.githubusercontent.com/Jackey-Sparrow/hiApp-ionic2/master/screenshot/IMG_1965.PNG" width="320" height="568"/>
 <img src="https://raw.githubusercontent.com/Jackey-Sparrow/hiApp-ionic2/master/screenshot/IMG_1966.PNG" width="320" height="568"/>
 <img src="https://raw.githubusercontent.com/Jackey-Sparrow/hiApp-ionic2/master/screenshot/IMG_1967.PNG" width="320" height="568"/>
+
+<div style='border-bottom:1px solid grey;width:100%'></div>
 
 <img src="https://raw.githubusercontent.com/Jackey-Sparrow/hiApp-ionic2/master/screenshot/IMG_5504.PNG" width="320" height="568"/>
 <img src="https://raw.githubusercontent.com/Jackey-Sparrow/hiApp-ionic2/master/screenshot/IMG_5503.PNG" width="320" height="568"/>
