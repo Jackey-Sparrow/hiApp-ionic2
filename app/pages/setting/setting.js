@@ -1,6 +1,8 @@
-import {Page, Translate} from 'ionic-angular';
+import {Page, Translate, NavController,Events} from 'ionic-angular';
 import {UserLocalStorage} from './../common/services/user-local-storage';
 import {languagesService} from './../common/services/language-service';
+import {ChangeLanguage} from './change-language';
+
 
 @Page({
 	templateUrl: 'build/pages/setting/setting.html'
@@ -9,14 +11,16 @@ import {languagesService} from './../common/services/language-service';
 export class Setting {
 
 	static get parameters() {
-		return [[Translate]]
+		return [[Translate], [NavController], [Events]]
 	}
 
-	constructor(translate) {
+	constructor(translate, nav, events) {
 		this.translate = translate;
 		this.userLocalStorage = new UserLocalStorage();
-
+		this.nav = nav;
+		this.events = events;
 		this.loadTranslation();
+		this.onLanguageChanged();
 	}
 
 	loadTranslation() {
@@ -36,9 +40,22 @@ export class Setting {
 		this.userLocalStorage.getUser().then(function (user) {
 			user = JSON.parse(user);
 			that.setting.language = languagesService.getLanguageUIByKey(user.languageKey).name;
+			that.languageKey = user.languageKey;
 		}, function (error) {
 			console.log(error);
 		});
 	}
+
+	changeLanguage() {
+		this.nav.push(ChangeLanguage, {languageKey: this.languageKey});
+	}
+
+	onLanguageChanged() {
+		let that = this;
+		this.events.subscribe('onLanguageChanged', (key)=> {
+			that.loadTranslation();
+		});
+	}
+
 
 }

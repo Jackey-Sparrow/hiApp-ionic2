@@ -1,4 +1,4 @@
-import {Page, Loading, NavController, Translate} from 'ionic-angular';
+import {Page, Loading, NavController, Translate, Events} from 'ionic-angular';
 import {Http} from 'angular2/http';
 import {TweetService} from './services/tweet-service';
 import {TweetDetail} from './tweet-detail';
@@ -10,13 +10,14 @@ import {TweetDetail} from './tweet-detail';
 export class Tweet {
 
 	static get parameters() {
-		return [[Http], [NavController], [Translate]];
+		return [[Http], [NavController], [Translate], [Events]];
 	}
 
-	constructor(http, nav, translate) {
+	constructor(http, nav, translate, events) {
 		this.http = http;
 		this.nav = nav;
 		this.loading;
+		this.events = events;
 		this.dataSource = [];
 		this.dataService = new TweetService(this.http);
 		this.curPage = 1;
@@ -26,6 +27,8 @@ export class Tweet {
 		this.translate = translate;
 
 		this.loadTranslation();
+
+		this.onLanguageChanged();
 	}
 
 	loadTranslation() {
@@ -92,5 +95,12 @@ export class Tweet {
 		setTimeout(()=> {
 			this.loadTweet();
 		}, 500);
+	}
+
+	onLanguageChanged() {
+		let that = this;
+		this.events.subscribe('onLanguageChanged', (key)=> {
+			that.loadTranslation();
+		});
 	}
 }

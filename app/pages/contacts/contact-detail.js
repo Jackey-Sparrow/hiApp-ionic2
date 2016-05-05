@@ -3,6 +3,7 @@
  */
 import {Page, Loading, Translate, NavParams} from 'ionic-angular';
 import {Http} from 'angular2/http';
+import {platformDeviceHelper} from '../common/services/platform-device-helper';
 
 @Page({
 	templateUrl: 'build/pages/contacts/contact-detail.html'
@@ -19,5 +20,6 @@ export class ContactDetail {
 		this.navParams = navParams;
 		this.translate = translate;
 		this.contact = this.navParams.data.contact;
+		this.platformDeviceHelper = platformDeviceHelper;
 	}
 }

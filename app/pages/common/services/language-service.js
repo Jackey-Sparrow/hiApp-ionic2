@@ -56,7 +56,6 @@ var languagesUI = [
 
 var languagesService = {
 	defaultKey: 'en',
-	//languages: languages,
 	languagesUI: languagesUI,
 	init: init,
 	getLanguageUIByKey: getLanguageUIByKey

@@ -1,17 +1,17 @@
 <ion-navbar *navbar>
-    <ion-toolbar>
-        <ion-buttons start>
-            <button (click)="refresh()">
-                <ion-icon name="back"></ion-icon>
-            </button>
-        </ion-buttons>
-    </ion-toolbar>
+    <!--<ion-toolbar>-->
+        <!--<ion-buttons start>-->
+            <!--<button (click)="refresh()">-->
+                <!--<ion-icon name="back"></ion-icon>-->
+            <!--</button>-->
+        <!--</ion-buttons>-->
+    <!--</ion-toolbar>-->
 </ion-navbar>
 <ion-content padding class="contact-detail" style="background-color: #efeff4;">
 
     <ion-list>
 
-        <ion-item>
+        <ion-item class="contact-detail-face">
             <ion-avatar item-left>
                 <img src="{{contact.face}}"/>
             </ion-avatar>
@@ -22,15 +22,15 @@
 
         <ion-item>
 
-           {{contact.telephone}}
-            <ion-icon name="call" item-right></ion-icon>
+            {{contact.telephone}}
+            <ion-icon name="call" item-right (click)="platformDeviceHelper.call(contact.telephone)"></ion-icon>
             <ion-icon name="text" item-right></ion-icon>
         </ion-item>
 
         <ion-item>
 
             {{contact.email}}
-            <ion-icon name="mail" item-right></ion-icon>
+            <ion-icon name="mail" item-right (click)="platformDeviceHelper.mail(contact.email)"></ion-icon>
         </ion-item>
 
         <ion-item>
