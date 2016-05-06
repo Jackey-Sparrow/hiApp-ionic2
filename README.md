@@ -1,11 +1,13 @@
 # hiApp Ionic 2
 
 ## DONE
-1. translation
+1. translation(English / Chinese)
 2. infinite scroll
 3. Alert
 4. NavController
 5. Stroage
+6. Loading
+7. Events
 
 
 ## screenshot
