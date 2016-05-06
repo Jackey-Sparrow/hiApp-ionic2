@@ -31,11 +31,11 @@
         <ion-item>
             <ion-icon name="globe" item-left class="language"></ion-icon>
             {{setting.language}}
-            <ion-note item-right>{{setting.switchLanguage}}</ion-note>
+            <ion-note item-right (click)="changeLanguage()">{{setting.switchLanguage}}</ion-note>
         </ion-item>
 
-        <ion-item>
-            <ion-icon name="alert" item-left class="about"></ion-icon>
+        <ion-item (click)="aboutUs()">
+            <ion-icon name="alert" item-left class="about" ></ion-icon>
             {{setting.about}}
         </ion-item>
     </ion-list>

@@ -1,10 +1,21 @@
-
 <ion-navbar *navbar>
-  <ion-title>
-    Tab 2
-  </ion-title>
+    <ion-title>
+        {{title}}
+    </ion-title>
 </ion-navbar>
 
-<ion-content class="page2">
+<ion-content class="contacts">
+    <ion-list>
+        <ion-item *ngFor="#contact of contacts" (click)="openContactDetail(contact)">
+            <ion-avatar item-left>
+                <img src="{{contact.face}}">
+            </ion-avatar>
+            <h2>{{contact.name}}</h2>
+
+            <p>{{contact.telephone}}</p>
+
+            <ion-icon name="arrow-forward" item-right></ion-icon>
+        </ion-item>
+    </ion-list>
 
 </ion-content>
