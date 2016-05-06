@@ -2,10 +2,11 @@
 
 ## DONE
 1. translation
-2. http
+2. infinite scroll
+3. Alert
+4. NavController
+5. Stroage
 
-
-## STATIC CLASS
 
 ## screenshot
 
