@@ -10,11 +10,11 @@
   border-bottom: 1px solid rgb(221, 221, 221);
 }
 
-.tweet ion-card ion-card-content{
+.tweet ion-card ion-card-content {
   padding-top: 5px;
 }
 
-.tweet .half-image {
+.half-image {
   width: 50%;
   height: 50%;
   padding: 0px 16px;
@@ -30,4 +30,20 @@
 .login ion-list {
   margin-bottom: 0px;
   padding-bottom: 0px;
+}
+
+.tweet-detail {
+  background-color: #efeff4;
+}
+
+.tweet-detail ion-list {
+  margin: 12px 12px 12px 12px;
+}
+
+.tweet-detail ion-list ion-list-header {
+  background: white;
+}
+
+.tweet-detail ion-list ion-avatar img {
+  border-radius: 0;
 }

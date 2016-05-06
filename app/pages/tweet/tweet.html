@@ -13,39 +13,40 @@
         </ion-buttons>
     </ion-toolbar>
 </ion-navbar>
-<ion-content padding class="tweet" style="background-color: #efeff4;">
+<ion-content class="tweet" style="background-color: #efeff4;">
 
-    <ion-card *ngFor="#tweet of dataSource">
+    <ion-list>
+        <ion-card *ngFor="#tweet of dataSource">
 
-        <ion-item class="tweet-title">
-            <ion-avatar item-left>
-                <img src="{{tweet.icon}}">
-            </ion-avatar>
-            <h2>{{tweet.name}}</h2>
+            <ion-item class="tweet-title">
+                <ion-avatar item-left>
+                    <img src="{{tweet.icon}}">
+                </ion-avatar>
+                <h2>{{tweet.name}}</h2>
 
-            <p>{{tweet.insertDate}}</p>
-        </ion-item>
+                <p>{{tweet.insertDate}}</p>
+            </ion-item>
 
-        <ion-card-content (click)="openTweetDetail(tweet)">
-            <p>{{tweet.content}}</p>
-        </ion-card-content>
+            <ion-card-content (click)="openTweetDetail(tweet)">
+                <p>{{tweet.content}}</p>
+            </ion-card-content>
 
-        <img *ngFor="#pic of tweet.photos" class="half-image" src="{{pic}}">
+            <img *ngFor="#pic of tweet.photos" class="half-image" src="{{pic}}">
 
-        <ion-item>
-            <button primary clear item-left>
-                <ion-icon name="thumbs-up"></ion-icon>
-                <div>{{tweet.likes}} Likes</div>
-            </button>
-            <button primary clear item-left>
-                <ion-icon name="text"></ion-icon>
-                <div>{{tweet.comments}} Comments</div>
-            </button>
-        </ion-item>
+            <ion-item>
+                <button primary clear item-left>
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>{{tweet.likes}} {{tweets.likes}}</div>
+                </button>
+                <button primary clear item-left>
+                    <ion-icon name="text"></ion-icon>
+                    <div>{{tweet.comments}} {{tweets.comments}}</div>
+                </button>
+            </ion-item>
 
-    </ion-card>
-
-    <ion-infinite-scroll *ngIf="moreTweet" (infinite)="loadMore($event)" threshold="5%" distance="50%">
-        <ion-infinite-scroll-content loadingText="Loading More Tweet"></ion-infinite-scroll-content>
+        </ion-card>
+    </ion-list>
+    <ion-infinite-scroll *ngIf="moreTweet" (infinite)="loadMore($event)" threshold="100px">
+        <ion-infinite-scroll-content loadingText="{{tweets.loadMore}}"></ion-infinite-scroll-content>
     </ion-infinite-scroll>
 </ion-content>

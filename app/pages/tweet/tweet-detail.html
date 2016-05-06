@@ -7,7 +7,7 @@
         </ion-buttons>
     </ion-toolbar>
 </ion-navbar>
-<ion-content padding class="tweet" style="background-color: #efeff4;">
+<ion-content class="tweet-detail">
 
     <ion-card>
 
@@ -28,14 +28,27 @@
         <ion-item>
             <button primary clear item-left>
                 <ion-icon name="thumbs-up"></ion-icon>
-                <div>{{tweet.likes}} Likes</div>
+                <div>{{tweet.likes}} {{tweetDetail.likes}}</div>
             </button>
             <button primary clear item-left>
                 <ion-icon name="text"></ion-icon>
-                <div>{{tweet.comments}} Comments</div>
+                <div>{{tweet.comments}} {{tweetDetail.comments}}</div>
             </button>
         </ion-item>
-
     </ion-card>
+    <ion-list>
+        <ion-list-header>
+            {{tweetDetail.comments}}
+        </ion-list-header>
+        <ion-item *ngFor="#comment of comments">
+            <ion-avatar item-left>
+                <img src="images/avatar01.jpg">
+            </ion-avatar>
+            <h2>{{comment.userName}}</h2>
+
+            <p>{{comment.comment}}</p>
+        </ion-item>
+    </ion-list>
+
 
 </ion-content>

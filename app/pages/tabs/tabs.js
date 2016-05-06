@@ -12,8 +12,6 @@ export class TabsPage {
 	}
 
 	constructor(translate, events) {
-		// this tells the tabs component which Pages
-		// should be each tab's root Page
 		this.tab1Root = Tweet;
 		this.tab2Root = Contacts;
 		this.tab3Root = Setting;

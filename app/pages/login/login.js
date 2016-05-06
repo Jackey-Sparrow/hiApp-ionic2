@@ -18,7 +18,6 @@ export class Login {
 
 	constructor(nav, translate) {
 
-		this.name = 'Login';
 		this.nav = nav;
 		this.localStorage = new UserLocalStorage();
 
@@ -45,7 +44,8 @@ export class Login {
 			userName: this.translate.translate('userName', lang),
 			password: this.translate.translate('password', lang),
 			language: this.translate.translate('language', lang),
-			loginBtn: this.translate.translate('login', lang)
+			loginBtn: this.translate.translate('login', lang),
+			logining: this.translate.translate('logining', lang)
 		};
 	}
 
@@ -57,7 +57,7 @@ export class Login {
 	showLoading() {
 
 		let loading = Loading.create({
-			content: 'Login',
+			content: this.login.logining,
 			duration: 3000,
 			dismissOnPageChange: true
 		});
@@ -65,7 +65,6 @@ export class Login {
 		this.nav.present(loading);
 
 		setTimeout(() => {
-			loading.dismiss();
 			this.nav.push(TabsPage);
 		}, 1000);
 	}

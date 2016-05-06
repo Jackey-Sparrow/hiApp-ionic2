@@ -6,15 +6,20 @@ var languages = {
 		'tab1': '推特',
 		'tab2': '通讯录',
 		'tab3': '设置',
+		'loading':'正在加载...',
+		'loadMore':'更多...',
 
 		'userName': '用户名',
 		'password': '密码',
 		'language': '语言',
 		'login': '登陆',
+		'logining': '正在登陆',
 
 		'tweetTitle': '推特',
+		'likes': '赞',
+		'comments': '评论',
 
-		'contactTitle':'通讯录',
+		'contactTitle': '通讯录',
 
 		'settingTitle': '设置',
 		'feedback': '意见反馈',
@@ -26,14 +31,20 @@ var languages = {
 		'tab1': 'Tweet',
 		'tab2': 'Contacts',
 		'tab3': 'Setting',
+		'loading':'Loading...',
+		'loadMore':'Loading More...',
 
 		'userName': 'UserName',
 		'password': 'Password',
 		'language': 'Language',
 		'login': 'Login',
+		'logining': 'Login..',
 
 		'tweetTitle': 'Tweet',
-		'contactTitle':'Contacts',
+		'likes': 'Likes',
+		'comments': 'Comments',
+
+		'contactTitle': 'Contacts',
 
 		'settingTitle': 'Setting',
 		'feedback': 'Feekback',

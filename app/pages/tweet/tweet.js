@@ -33,20 +33,25 @@ export class Tweet {
 
 	loadTranslation() {
 		this.tweets = {
-			title: this.translate.translate('tweetTitle')
+			title: this.translate.translate('tweetTitle'),
+			likes: this.translate.translate('likes'),
+			comments: this.translate.translate('comments'),
+			loading: this.translate.translate('loading'),
+			loadMore: this.translate.translate('loadMore')
 		}
 	}
 
 	loadTweet() {
-		this.presentLoading();
-
 		var that = this;
-		this.dataService.loadData(this.curPage, this.pageSize, this.http).then(function (tweets) {
-			setTimeout(()=> {
-				that.closeLoading();
-				that.dataSource = tweets;
-			}, 2000);
-		});
+		setTimeout(function () {
+			that.presentLoading();
+			that.dataService.loadData(that.curPage, that.pageSize, that.http).then(function (tweets) {
+				setTimeout(()=> {
+					that.closeLoading();
+					that.dataSource = tweets;
+				}, 2000);
+			});
+		}, 300);
 	}
 
 	refresh() {
@@ -62,19 +67,22 @@ export class Tweet {
 		this.curPage++;
 		let that = this;
 		this.dataService.loadData(this.curPage, this.pageSize, this.http).then(function (tweets) {
+			//fake delay loading
+			setTimeout(function () {
+				if (tweets.length) {
+					that.dataSource = that.dataSource.concat(tweets);
+				} else {
+					that.moreTweet = false;
+				}
+				infiniteScroll.complete();
+			}, 4000);
 
-			if (tweets.length) {
-				that.dataSource = that.dataSource.concat(tweets);
-			} else {
-				that.moreTweet = false;
-			}
-			infiniteScroll.complete();
 		});
 	}
 
 	presentLoading() {
 		this.loading = Loading.create({
-			content: 'Loading...',
+			content: this.tweets.loading,
 			duration: 3000,
 			dismissOnPageChange: true
 		});
@@ -91,10 +99,7 @@ export class Tweet {
 	}
 
 	onPageLoaded() {
-		//todo: refactor
-		setTimeout(()=> {
-			this.loadTweet();
-		}, 500);
+		this.loadTweet();
 	}
 
 	onLanguageChanged() {

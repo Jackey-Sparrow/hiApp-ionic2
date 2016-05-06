@@ -1,4 +1,4 @@
-import {Page, Translate, NavController,Events} from 'ionic-angular';
+import {Page, Translate, NavController, Events, Alert} from 'ionic-angular';
 import {UserLocalStorage} from './../common/services/user-local-storage';
 import {languagesService} from './../common/services/language-service';
 import {ChangeLanguage} from './change-language';
@@ -55,6 +55,17 @@ export class Setting {
 		this.events.subscribe('onLanguageChanged', (key)=> {
 			that.loadTranslation();
 		});
+	}
+
+	aboutUs() {
+		let alert = Alert.create({
+			title: 'HiApp-ionic2',
+			message: 'Author : Jackey Sparrow',
+			buttons: ['OK']
+		});
+
+		this.nav.present(alert);
+
 	}
 
 

@@ -40,7 +40,6 @@ export class ChangeLanguage {
 			if (user) {
 				user = JSON.parse(user);
 				user.languageKey = key;
-				debugger;
 				that.localStorage.setUser(user).then(function () {
 					that.events.publish('onLanguageChanged', that.selectedLanguage);
 				});
